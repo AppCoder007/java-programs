@@ -60,3 +60,33 @@ System.out.println("This is invalid dimension");
 	
 
 }// end of program
+
+
+
+class Triangle >>>>>>>
+
+
+
+public class Triangle {
+	static boolean isValid(double side1, double side2, double side3) {
+		double a,b,c;
+		a = side1 + side2;
+		b = side2 + side3;
+		c = side3 + side1;
+				
+		boolean number;
+		if (a>side3 && b > side1 && c > side2){
+			number = true;
+		} else
+			number = false;
+		return number;
+	}// end of method isValid
+	
+	public static double area(double side1, double side2, double side3){
+		 double sideLength = (side1 + side2 + side3)/2;
+		 double area = (double) Math.sqrt(sideLength*(sideLength - side1)*(sideLength - side2)*(sideLength - side3));
+		return area;
+		
+	}// end of method
+
+} // end of class triangle
