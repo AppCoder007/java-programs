@@ -1,0 +1,62 @@
+/* Dona varghese
+ * Problem no: 6.19
+ * Input	 : length of three sides of triangle
+ * Algorith  : area   = square root of s(s-side1)(s-side2)(s-side3)
+ * 			   s = (side1+side2+side3)/2
+ * Output	 : print area 
+ */
+import java.util.Scanner;
+public class MyTriangle {
+
+	public static void main(String[] args) {
+		Triangle c = new Triangle();
+Scanner input = new Scanner(System.in);
+double s1 = 0,s2 = 0, s3= 0;
+boolean isNumber;
+do
+{
+    	System.out.println("Enter the length of the 1st side of triangle");
+    	if (input.hasNextDouble()) 
+    {
+    	 s1 = input.nextDouble();
+    	 isNumber = true;
+    	 
+    	} 
+    	{
+        	System.out.println("Enter the length of 2nd side of triangle");
+        	if (input.hasNextDouble()) 
+        {
+        	 s2 = input.nextDouble();
+        	 isNumber = true;
+        	 
+    	} 
+        	
+        	{
+            	System.out.println("Enter the length of 3rd side of triangle");
+            	if (input.hasNextDouble()) 
+            {
+            	 s3 = input.nextDouble();
+            	 isNumber = true;
+            	 
+            } 
+    	else {
+        
+        System.out.print("Invalid input. try again\n ");  
+        isNumber = false;
+        input.next();
+    	}}}}while (!(isNumber)); // end of input validation loop
+ c.area(s1, s2, s3);
+ boolean valid = c.isValid(s1, s2, s3);
+ if (!(valid)){
+	 System.out.println(valid);
+System.out.println("This is invalid dimension");	
+ } // end of if statement
+ else{
+
+
+ System.out.println("Area of the triangle is " + c.area(s1, s2, s3));
+} // end of else statement
+	}// end of main 
+	
+
+}// end of program
