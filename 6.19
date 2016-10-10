@@ -90,3 +90,13 @@ public class Triangle {
 	}// end of method
 
 } // end of class triangle
+
+OUTPUT:
+Enter the length of the 1st side of triangle
+30
+Enter the length of 2nd side of triangle
+40
+Enter the length of 3rd side of triangle
+50
+Area of the triangle is 600.0
+
