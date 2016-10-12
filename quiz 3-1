@@ -1,0 +1,136 @@
+
+
+// Dona varghrese
+// 10/11/16
+
+package divisibleBy8;
+
+public class divisibleBy8 {
+
+	public static void main(String[] args) {
+		int n = 1;
+		System.out.println("The numbers are divisible by 8 between 1 to 100 are :");
+		while (n <= 100) {
+			 if (n % 8 == 0) {
+			        System.out.print(n + ", ");     
+			  
+			   	 } // end of if statement
+			 n++; // counter the variable
+		}// end of while loop
+	}// end of main
+
+} // end of program
+
+
+________________________________________________________________________________________________________________________________
+
+
+// Dona varghese
+// quiz 3-1
+// 10/11/16
+
+package patternOfStars;
+
+import java.util.Scanner;
+
+public class patternOfStars {
+
+	public static void main(String[] args) {
+		int number = 0;
+		Scanner input = new Scanner(System.in);
+		boolean isNumber;
+		do
+		{
+			System.out.println("Enter an integer");
+		    	if (input.hasNextInt()) 
+		    {
+		    		number = input.nextInt();
+		    	 isNumber = true;
+		    	 
+		    	} else {
+		        
+		        System.out.print("Invalid input. try again\n ");  
+		        isNumber = false;
+		        input.next();
+			} }while (!(isNumber));	// end of input validation loop
+		for (int i = 1; i <= number; i++){
+			for (int j=1; j <= number; j++){
+				//System.out.print("*");
+				System.out.print("*");
+			}	// end of for loop j
+	System.out.print("\n");
+		} // end of for loop i 
+
+
+	}// end of main
+
+}// end of program
+
+
+__________________________________________________________________________________________________________________
+
+
+// Dona varghese
+// 10/11/16
+
+import java.util.Scanner;
+public class Square {
+
+	public static void main(String[] args) {
+		int number = 0;
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter an integer");
+		number = input.nextInt();
+	squarePattern(number);
+	}
+
+	private static void squarePattern(int number) {
+		for (int i = 1; i <= number; i++){
+			for (int j=1; j <= number; j++){
+				//System.out.print("*");
+				System.out.print("*");
+			}	// end of for loop j
+	System.out.print("\n");
+		} // end of for loop i 
+		
+	}
+	
+
+}
+
+
+_____________________________________________________________________________________________________________________
+
+
+
+// Dona varghese
+// 10/11/16
+
+import java.util.Scanner;
+
+public class Productiteration {
+
+	public static void main(String[] args) {
+float product = 1.0f;
+float number = 0;
+Scanner input = new Scanner(System.in);
+System.out.println("Enter a number");
+number = input.nextFloat();
+
+while(number != 0){
+	product = product*number;
+	System.out.println(product);
+	number = input.nextFloat();
+
+}
+	while (number == 0){
+		System.out.println(product);
+		break;
+	}
+	
+	
+
+	}
+
+}
+
