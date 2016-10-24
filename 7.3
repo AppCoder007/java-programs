@@ -1,0 +1,103 @@
+/* Dona varghese
+ * Problem no: 7.3
+ * Input	 :  from the user
+ * Algorithm : temp=myList[i];
+        		myList[i]=myList[j];
+        		myList[j]=temp;
+        		
+        		targetArray[d] = myList[d]
+        		
+        		
+ * Output	 : print numbers and how many times it repeated
+ */
+
+public class CountOccurance {
+
+	public static void main(String[] args) {
+
+java.util.Scanner input = new java.util.Scanner(System.in);
+int count = 0;
+int n1 = 1000000;
+int[] myList = new int[n1];
+System.out.println("Enter the integers between 1 and 100");
+for (int i = 0; i <= n1; i++){
+	count++;
+	myList[i] = input.nextInt();
+	if (myList[i] == 0){
+	break;
+	}// end of if statement
+}// end of for loop
+count = count-1;
+
+
+// sorting the elements
+
+for(int i=0;i<count;i++)
+{
+    for(int j=i;j<count;j++)
+    {
+        if(myList[i]>myList[j])
+        {
+        int temp=myList[i];
+        myList[i]=myList[j];
+        myList[j]=temp;
+        } // end of if statement
+
+    } // end of 'j' for loop
+}// end of 'i'for loop
+
+
+//create a duplicate array
+int[] targetArray = new int[count];
+for(int d =0 ; d < count ; d++){
+	targetArray[d] = myList[d];
+
+}// end of creating duplicate array
+
+        for (int i = 0; i < count; i++) {
+            for (int j = i + 1; j < count; j++) {
+                if (myList[i] == myList[j]) {                  
+                    int num = j;
+
+                    for(int k1 = j + 1; k1 < count; k1++, num++) {
+                        myList[num] = myList[k1];
+                    }
+
+                    count--;
+                    j--;
+                }
+            }
+        }
+
+        int[] whitelist = new int[count];
+        int n = 0;
+        for (int i = 0; i < count; i++) {
+            whitelist[i] = myList[i];
+
+        } // end for loop
+        int y;
+        for (int x=0;x<whitelist.length; x++){
+	        
+        	for ( y=0; y <targetArray.length; y++){
+             
+        		if (whitelist[x] == targetArray[y]){
+        			n++;
+        			
+        		}	
+        		// display output
+        	} if (n>1){
+        	System.out.println(whitelist[x] + " occurs " + n + " times");
+        	n=0;
+        	}else
+        	{
+        		n=1;
+        		System.out.println(whitelist[x] + " occurs " + n + " time");
+        	}
+        	}
+        
+        
+ 
+
+	}// end of main
+
+}// end of program
