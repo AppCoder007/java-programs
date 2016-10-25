@@ -1,0 +1,73 @@
+/*/* Dona varghese
+ * Problem no: 7.4
+ * Input	 :  from the user
+ * Algorithm : average = sum/(count-1);, sum += myList[n];
+        		
+        		
+ * Output	 : total numbers greater than average is 2
+				total numbers less than average is 2
+				total numbers equals to average is 0
+ */
+import java.util.Arrays;
+public class AnalyzeScores {
+
+	public static void main(String[] args) {
+
+java.util.Scanner input = new java.util.Scanner(System.in);
+int count = 0;
+int n1 = 100;
+float avg = 0.0f;
+float[] myList = new float[n1];
+System.out.println("Enter the scores");
+for (int i = 0; i <= n1; i++){
+	count++;
+	myList[i] = input.nextFloat();
+	if (myList[i] < 0){
+	break;
+	}// end of if statement
+}// end of for loop
+float sum = 0.0f;
+for (int n = 0; n < count-1; n++){
+	sum += myList[n];
+}
+float average = sum/(count-1);
+ System.out.println("Average is " + average);
+
+int a = -1,b = 0,c = 0;
+for (int k = 0; k < count; k++){
+	if (average > myList[k]){
+		a++;
+	}
+}System.out.println("total numbers greater than average is " + a);
+for (int k = 0; k < count; k++){
+	if (average < myList[k]){
+		b++;
+		
+	}
+}System.out.println("total numbers less than average is " +b);
+for (int k = 0; k < count; k++){
+	if (average == myList[k]){
+		c++;
+	}
+}System.out.println("total numbers equals to average is " + c);
+
+
+
+
+	}// end of main 
+	}// end of analyzeScores
+
+
+
+OUTPUT:
+
+Enter the scores
+10
+20
+30
+40
+-1
+Average is 25.0
+total numbers greater than average is 2
+total numbers less than average is 2
+total numbers equals to average is 0
