@@ -1,0 +1,94 @@
+/* Dona varghese
+ * Problem no: 7.15
+ * Input	 :  from the user
+ * Algorithm : 	if (List[w] < List[w+1]){
+				count[w] = List[w+1];
+				System.out.println(count[w]);
+        		
+        		
+ * Output	 : print numbers without repeating
+ */
+
+public class EliminateDuplicates {
+
+	public static void main(String[] args) {
+		java.util.Scanner input = new java.util.Scanner(System.in);
+		
+		int n1 = 10;
+		int[] myList = new int[n1];
+		System.out.println("Enter ten numbers");
+		for (int i = 0; i < n1; i++){
+			myList[i] = input.nextInt();
+	
+		}// end of for loop
+		
+		eliminatesDuplicates(myList);
+
+
+	}// end of main method
+
+	private static int[] eliminatesDuplicates(int[] List) {
+		
+		int j,currentMinIndex = 0,currentMin = 0;
+		int n1 = 10;
+		 int [] count = new int[n1];
+		for ( j =0; j < n1; j++){
+			 currentMin =  List[j];
+			 currentMinIndex = j;
+		
+		
+		for (int k=j+1; k < n1; k++){
+				
+				if (currentMin > List[k]){
+					 currentMin = List[k];
+					 currentMinIndex = k;
+				 } // end of if statement
+						 
+			}// end of k for loop
+		if (currentMinIndex != j){
+			List[currentMinIndex] = List[j];
+			List[j] = currentMin;	
+		} // end of if statement
+	
+	
+		}//end of j for loop
+		
+		// sorted array
+		System.out.println(List[0]);
+		
+		for (int w=0; w<=n1; w++){
+			
+			if (List[w] < List[w+1]){
+				count[w] = List[w+1];
+				System.out.println(count[w]);
+			}
+		
+		}
+		return count;
+			
+	
+	}// end of method 
+
+}// end of duplicate
+
+OUTPUT:
+Enter ten numbers
+1
+2
+3
+2
+1
+6
+3
+4
+5
+2
+1
+2
+3
+4
+5
+6
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
+	at EliminateDuplicates.eliminatesDuplicates(EliminateDuplicates.java:61)
+	at EliminateDuplicates.main(EliminateDuplicates.java:25)
