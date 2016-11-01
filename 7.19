@@ -1,0 +1,86 @@
+/* Dona varghese
+ * Problem no: 7.19
+ * Input	 :  from the user
+ * Algorithm : 	if (List[w] < List[k]){
+				return true;				
+				}
+				else  {
+				return false;
+				}	 
+  				if (isSorted(myList) == true){
+				System.out.println("The list is already sorted");
+				} else {
+				System.out.println("The list is not sorted");
+				}   		
+ * Output	 : print numbers without repeating
+ */
+public class SortedCheck {
+
+	public static void main(String[] args) {
+		java.util.Scanner input = new java.util.Scanner(System.in);
+		
+		int n1;
+	
+		System.out.println("Enter ten numbers");
+		n1 = input.nextInt();
+		int[] myList = new int[n1];
+		for (int i = 0; i < n1; i++){
+			myList[i] = input.nextInt();
+		}// end of for loop
+		isSorted(myList);// passing argument to method
+		if (isSorted(myList) == true){
+			System.out.println("The list is already sorted");
+		} else {
+			System.out.println("The list is not sorted");
+		}
+		}// end of main method
+	
+	public static boolean isSorted(int[] List){
+		boolean sort = false; 
+		int k = 0;
+for (int w=0; w<=List.length+1; w++){
+	
+			if (List[w] <= List[w+1]){
+				return  true;	
+			}// end of if statement
+			else  {
+				return false;
+			}// end of else statement	
+		}// end of w for loop
+return sort;
+
+		
+	}// end of method
+	
+	}// end of Sorted Check
+  
+  OUTPUT:
+  
+  Enter ten numbers
+10
+1
+1
+
+3
+4
+4
+5
+7
+9
+11
+21
+The list is already sorted
+
+
+OUTPUT 2:
+Enter ten numbers
+8
+10
+1
+55
+16
+61
+9
+11
+1
+The list is not sorted
