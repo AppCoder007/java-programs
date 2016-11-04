@@ -1,0 +1,74 @@
+/* Dona varghese
+ * Problem no: 8.13
+ * Input	 : user input
+ * Algorith  : int [] position = new int[2];	
+				double largest = 0 ;
+				int i,j;
+				for ( i = 0; i <a.length; i++){
+				for ( j=0;j<a.length;j++){
+				if (0 > a[j][i]) {
+					 largest = 0;
+				}
+				else  if (a[0][0] < a[j][i])
+				{ largest = a[j][i];
+				position[0]=j;
+				 position[1]=i;
+				}// 	
+				}// end j for loop		
+				}// end i for loop
+				return position;
+ * Output	 :  The location of the largest element is at 1 2
+*/
+import java.util.Scanner;
+public class LocateLargestElement {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+System.out.println("Enter the number of rows and columns of the array: ");
+int length = input.nextInt();
+int width = input.nextInt();
+
+double [][] matrix = new double[length][width];
+System.out.println("Enter the array: ");
+
+// user input 2d matrix
+for (int i = 0; i <matrix.length; i++){
+	for (int j=0;j<matrix[i].length;j++){
+		matrix[i][j] = input.nextDouble();
+	}// end i for loop
+}// end j for loop
+
+System.out.println("The location of the largest element is at " + locateLargest(matrix)[0] 
+																	+ " " + locateLargest(matrix)[1]);
+	}// end of main
+
+	private static int[] locateLargest(double[][] a) {
+	int [] position = new int[2];	
+	double largest = 0 ;
+	int i,j;
+		for ( i = 0; i <a.length; i++){
+			for ( j=0;j<a.length;j++){
+				if (0 > a[j][i]) {
+					 largest = 0;
+				}
+				else  if (a[0][0] < a[j][i])
+				{ largest = a[j][i];
+				position[0]=j;
+				 position[1]=i;
+				}// 	
+			}// end j for loop		
+		}// end i for loop
+		return position;
+	}// end of method
+
+}// end of LocateLargestElement
+
+
+______________________________________________________________________________________________
+Enter the number of rows and columns of the array: 
+3 4
+Enter the array: 
+23.5 35 2 10
+4.5 3 45 3.5
+35 44 5.5 9.6
+The location of the largest element is at 1 2
