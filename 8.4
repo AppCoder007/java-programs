@@ -1,0 +1,101 @@
+
+/* Dona varghese
+ * Problem no: 8.4
+ * Input	 : none
+ * Algorith  : for (int i =0; i<matrix[0].length; i++){
+			  employee[0] += matrix[0][i];			  
+				}// end of column 1 for loop
+				//hours[0] = employee[0];
+	 			hours[0] =  "employee 0";
+ * Output	 : print sum of each column 
+*/
+package weeklyHours;
+
+public class weeklyHours {
+
+	public static void main(String[] args) {
+		int[] employee = new int[8];
+		String[] hours = {"Employee 0","Employee 1","Employee 2","Employee 3",
+				"Employee 4", "Employee 5","Employee 6","Employee 7"};
+		int [][] matrix = {
+				{2,4,3,4,5,8,8},
+				{7,3,4,3,3,4,4},
+				{3,3,4,3,3,2,2},
+				{9,3,4,7,3,4,1},
+				{3,5,4,3,6,3,8},
+				{3,4,4,6,3,4,4},
+				{3,7,4,8,3,8,4},
+				{6,3,5,9,2,7,9}
+};
+	for (int i =0; i<matrix[0].length; i++){
+			  employee[0] += matrix[0][i];			  
+	}// end of column 1 for loop
+	 
+	for (int j =0; j<matrix[1].length; j++){
+		  employee[1] += matrix[1][j];
+	}// end of column 1 for loop
+	
+	for (int i =0; i<matrix[0].length; i++){
+	  employee[2] += matrix[2][i];
+	}// end of column 1 for loop
+	
+	for (int i =0; i<matrix[0].length; i++){
+	  employee[3] += matrix[3][i];
+	}// end of column 1 for loop
+	
+	for (int i =0; i<matrix[0].length; i++){
+	  employee[4] += matrix[4][i];
+	}// end of column 1 for loop
+	
+	for (int i =0; i<matrix[0].length; i++){
+	  employee[5] += matrix[5][i];
+	}// end of column 1 for loop
+	
+	for (int i =0; i<matrix[0].length; i++){
+	  employee[6] += matrix[6][i];
+	}// end of column 1 for loop
+	
+	for (int i =0; i<matrix[0].length; i++){
+	  employee[7] += matrix[7][i];
+	}// end of column 1 for loop
+	
+	
+	int j = 0;
+	for(int i=0;i<employee.length;i++)
+	{
+	    for( j=i;j<employee.length;j++)
+	    {
+	        if(employee[i]<employee[j] )
+	        {
+	        int temp=employee[i];
+	        String perm=hours[i];
+	        employee[i]=employee[j];
+	        hours[i]=hours[j];
+	        employee[j]=temp;
+	        hours[j]=perm;
+	        } // end of if statement
+	        
+	    } // end of 'j' for loop
+	    
+	}// end of 'i'for loop
+System.out.println("Hours worked by employee in decreasing order :");
+	for (int k = 0; k < employee.length ; k++){
+		System.out.println( ""+ hours[k]
+		+ ""+ " "+employee[k]);
+	} 
+}// end of main
+
+}// end of weeklyHours
+
+
+_________________________________________________________________________________________________
+
+Hours worked by employee in decreasing order :
+Employee 7 41
+Employee 6 37
+Employee 0 34
+Employee 4 32
+Employee 3 31
+Employee 1 28
+Employee 5 28
+Employee 2 20
