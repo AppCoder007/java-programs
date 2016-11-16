@@ -1,0 +1,116 @@
+/* Dona varghese
+ * Problem no: 9.8
+ * Input	 : none
+ * Algorith  : if (on == true){
+				 description = "Fan  is on \n";
+			     fancolor = color;
+				 fanradius = radius;
+				 return (description  + "Fan color is "+  color + "\n" + "Fan Radius is "+ radius);
+					}
+				else{
+					System.out.println();
+					description = "Fan  is off";
+				}
+				return (description  + "\n" + "Fan color is "+  color + "\n" + "Fan Radius is "+ radius);
+				
+ * Output	 : Fan  is on 
+				Fan color is yellow
+				Fan Radius is 10.0
+
+				Fan  is off
+				Fan color is blue
+				Fan Radius is 5.0
+				
+*/
+package testFan;
+
+public class testFan {
+
+	public static void main(String[] args) {
+		Fan FanId = new Fan();
+		FanId.setSpeed(3);
+		FanId.setRadius(10);
+		FanId.setColor("yellow");
+		FanId.setOn(true);
+		
+		Fan Fan2 = new Fan();
+		Fan2.setOn(false);
+		Fan2.setSpeed(2);
+		Fan2.setRadius(5);
+		Fan2.setColor("blue");
+		
+		System.out.println(FanId.toString());
+		
+		System.out.println(Fan2.toString());
+	}// end of main
+
+}// end of test fan
+
+-------------------------------------------------------------------------------------------------------------------------
+class
+
+
+package testFan;
+public class Fan {
+	
+		 int SLOW=1;
+		 int MEDIUM=2;
+		 int FAST=3;
+		 
+		 private int speed = SLOW;
+		 private boolean on = false;
+		 private double radius = 5;
+		 private String color = "blue";
+		 
+		 public Fan() {
+		 }// end of construct
+		 
+		public int getSpeed() {
+			return speed;
+		}
+		public void setSpeed(int speed) {
+			this.speed = speed;
+		}
+		public boolean isOn() {
+			if (on == true){
+				on = true;
+				}
+			else{
+				on = false;
+			}
+			return on;
+		}
+		public void setOn(boolean on) {
+			
+			this.on = on;
+		}
+		public double getRadius() {
+			return radius;
+		}
+		public void setRadius(double radius) {
+			this.radius = radius;
+		}
+		public String getColor() {
+			return color;
+		}
+		public void setColor(String color) {
+			this.color = color;
+		}
+		 
+		 public String toString(){
+			 String description,fancolor = "";
+			 double fanradius = 0;
+			 if (on == true){
+				 description = "Fan  is on \n";
+			     fancolor = color;
+				 fanradius = radius;
+				 return (description  + "Fan color is "+  color + "\n" + "Fan Radius is "+ radius);
+					}
+				else{
+					System.out.println();
+					description = "Fan  is off";
+				}
+			return (description  + "\n" + "Fan color is "+  color + "\n" + "Fan Radius is "+ radius);
+			 
+		 }// end of method
+}// end of class Fan
