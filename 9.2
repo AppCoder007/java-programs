@@ -1,0 +1,44 @@
+/* Dona varghese
+ * Problem no: 9.2
+ * Input	 : none
+ * Algorith  :((((previousClosingPrice/currentPrice)*100)-100));
+ * Output	 : The percentage difference is 0.4366812227074206 
+*/
+public class MainStock {
+
+	public static void main(String[] args) {
+		Stock newPrice = new Stock();
+ newPrice.setCurrentPrice(34.35); 
+ System.out.println("The percentage difference is " + newPrice.getChangePercent());
+	}// end of main
+
+}// end of main class
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+class
+
+
+
+public class Stock {
+String  symbol = "ORCL";
+String name = "Oracle Corporation";
+double previousClosingPrice =34.50;
+double currentPrice ;
+
+ Stock(String newsymbol, String newname){
+symbol = newsymbol;
+name = newname;
+}// end of constructor
+
+ public Stock() {
+}// end of constructor
+
+void setCurrentPrice(double newCurrentPrice){
+	 currentPrice = newCurrentPrice;
+ }// end of setcurrentPrice
+ double getChangePercent(){
+	 return ((((previousClosingPrice/currentPrice)*100)-100));
+ }// end of method getChangePercent
+}//  end of class stock
