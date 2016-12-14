@@ -1,0 +1,71 @@
+// Dona varghese
+// problem no: 14.6
+// COP2800 
+
+
+
+import javafx.application.*;
+import javafx.scene.*;
+import javafx.stage.Stage;
+import javafx.scene.paint.*;
+import javafx.scene.layout.*;
+import javafx.scene.shape.*;
+
+
+public class CheckerBoard extends Application {
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		
+		
+		GridPane pane = new GridPane();
+		
+		int m=0;	
+		for(int k=0;k<4;k++){
+		for (int i = 0; i<=8; i=i+2){
+			for(int j=0;j<=8; j=j+2){
+		Rectangle rectangle =  new Rectangle();
+		rectangle.setWidth(50);
+		rectangle.setHeight(50);
+		rectangle.setFill(Color.WHITE);
+		pane.add(rectangle, i, m);
+		}}
+		
+			for (int i = 1; i<=8; i=i+2){
+				for(int j=0;j<=8; j=j+2){
+			Rectangle rectangle1 =  new Rectangle();
+			rectangle1.setWidth(50);
+			rectangle1.setHeight(50);
+			rectangle1.setFill(Color.BLACK);
+			pane.add(rectangle1, i, m);
+			}}
+			m=m+2;
+		}
+		int n=0;	
+			for(int k=0;k<4;k++){
+			
+		for (int i = 0; i<=8; i=i+2){
+		Rectangle rectangle =  new Rectangle();
+		rectangle.setWidth(50);
+		rectangle.setHeight(50);
+		rectangle.setFill(Color.WHITE);
+		pane.add(rectangle, n, i);
+		}
+			
+			for (int i = 1; i<=8; i=i+2){
+			Rectangle rectangle1 =  new Rectangle();
+			rectangle1.setWidth(50);
+			rectangle1.setHeight(50);
+			rectangle1.setFill(Color.BLACK);
+			pane.add(rectangle1, n, i);
+			}
+			n=n+2;
+			}
+		
+		Scene scene = new Scene(pane);
+		primaryStage.setTitle("Exercise14_06");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+}// end of checker board
