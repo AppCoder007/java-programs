@@ -1,0 +1,51 @@
+// Dona varghese
+// Problem 14.6
+// COP2800 
+// DATE: 12/14/16
+
+
+import javafx.scene.paint.Color;
+import javafx.application.Application;
+import javafx.beans.binding.DoubleExpression;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import javafx.geometry.Pos;
+import javafx.scene.shape.Line;
+import javafx.application.Application;
+import javafx.scene.layout.*;
+import javafx.scene.shape.*;
+
+public class Display3x3grid extends Application {
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		
+		
+		Pane pane = new Pane();
+		
+		for(int n=3;n<=6;n=n+3){
+		Line line1 = new Line(0,0,0,0);
+		line1.startYProperty().bind(pane.heightProperty().multiply(2).divide(n));
+		line1.endXProperty().bind(pane.widthProperty());
+		line1.endYProperty().bind(pane.heightProperty().multiply(2).divide(n));
+		line1.setStrokeWidth(5);
+		line1.setStroke(Color.BLUE);
+		pane.getChildren().add(line1);
+		}
+		for(int n=3;n<=6;n=n+3){
+	    Line line2 = new Line(0,0,0,0);
+	    line2.startXProperty().bind(pane.widthProperty().multiply(2).divide(n));
+	    line2.endYProperty().bind(pane.heightProperty());
+	    line2.endXProperty().bind(pane.widthProperty().multiply(2).divide(n));
+		line2.setStrokeWidth(5);
+	    line2.setStroke(Color.RED);
+	    pane.getChildren().add(line2);
+		}
+		
+		Scene scene = new Scene(pane);
+		primaryStage.setTitle("Exercise14_16");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+}
+
+	}
