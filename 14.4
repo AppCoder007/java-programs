@@ -1,0 +1,45 @@
+// Dona varghese
+// problem no: 14.4
+// COP2800 
+
+import javafx.application.*;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.*;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+
+public class ColorAndFond extends Application{
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		
+		
+		GridPane pane = new GridPane();
+		pane.setPadding(new Insets(11.5,12.5,13.5,14.5));
+		pane.setHgap(5.5);
+		pane.setVgap(5.5);
+		
+		
+		for (int i = 0,j=0; i <5; i++){
+			
+		Label label = new Label("Java");
+		label.setFont(Font.font("Times New Roman",FontWeight.BOLD, FontPosture.ITALIC,22));
+		label.setOpacity(Math.random());
+		label.setTextFill(Color.color(Math.random(), Math.random(), Math.random()));
+		label.setRotate(90);
+		pane.add(label, i, j);
+		
+		}
+			
+		Scene scene = new Scene(pane);
+		primaryStage.setTitle("Exercise14_04");
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+
+}
